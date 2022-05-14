@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $(dirname "$0")
+export HOME="/home/johannes"
+python3 -m http.server 80 --cgi

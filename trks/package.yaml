@@ -1,0 +1,52 @@
+name:                time-tracker
+version:             0.1.0.0
+github:              "johannesCmayer/time-tracker"
+license:             BSD3
+author:              "Johannes C. Mayer"
+maintainer:          "j.c.mayer240@gmail.com"
+copyright:           "Johannes C. Mayer"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/johannesCmayer/time-tracker#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- time
+- split >= 0.2
+- text == 1.2.5.0
+- MissingH == 1.5.0.1
+
+library:
+  source-dirs: src
+
+executables:
+  time-tracker-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - time-tracker
+
+tests:
+  time-tracker-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - time-tracker
